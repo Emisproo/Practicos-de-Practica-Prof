@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1584205420 source:d:\analisis en sistemas\practica\acts en colaboracion con ayed\tarea de uml\colaboracion_taller\main.cpp
+	<iostream>
+
+1617052621 source:d:\analisis en sistemas\practica\practicos-de-practica-prof\acts en colaboracion con ayed\tarea de uml\colaboracion_taller\main.cpp
+	<iostream>
+	"Taller.cpp"
+	"Vehiculo.cpp"
+	"Coche.cpp"
+	"Moto.cpp"
+
+1617052606 d:\analisis en sistemas\practica\practicos-de-practica-prof\acts en colaboracion con ayed\tarea de uml\colaboracion_taller\taller.cpp
+	"Taller.h"
+
+1617049764 d:\analisis en sistemas\practica\practicos-de-practica-prof\acts en colaboracion con ayed\tarea de uml\colaboracion_taller\taller.h
+	"Vehiculo.h"
+	<iostream>
+
+1616780517 d:\analisis en sistemas\practica\practicos-de-practica-prof\acts en colaboracion con ayed\tarea de uml\colaboracion_taller\vehiculo.h
+	<iostream>
+
+1616712742 d:\analisis en sistemas\practica\practicos-de-practica-prof\acts en colaboracion con ayed\tarea de uml\colaboracion_taller\vehiculo.cpp
+	"Vehiculo.h"
+
+1616878723 d:\analisis en sistemas\practica\practicos-de-practica-prof\acts en colaboracion con ayed\tarea de uml\colaboracion_taller\coche.cpp
+	"Coche.h"
+
+1616878723 d:\analisis en sistemas\practica\practicos-de-practica-prof\acts en colaboracion con ayed\tarea de uml\colaboracion_taller\coche.h
+	"Vehiculo.h"
+	<string>
+
+1617052721 d:\analisis en sistemas\practica\practicos-de-practica-prof\acts en colaboracion con ayed\tarea de uml\colaboracion_taller\moto.cpp
+	"Moto.h"
+
+1616879277 d:\analisis en sistemas\practica\practicos-de-practica-prof\acts en colaboracion con ayed\tarea de uml\colaboracion_taller\moto.h
+	"Vehiculo.h"
+	<string>
+
