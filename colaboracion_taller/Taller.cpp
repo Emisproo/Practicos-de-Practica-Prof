@@ -36,16 +36,7 @@ void Taller::meter(Vehiculo *Pvehiculo)
 void Taller::arreglarVehiculos()
 {
 cout << "Reparando vehiculo.... " << endl;
-
-    for(int i = 0; i < cap_actual_vehiculos; i++)
-    {
-        list_de_vehi[i]->arrancar();
-
-
-    cout << "Reparacion completada! " << endl;
-    cout << " " << endl;
-    } 
-    cout<< "REPARACION EXITOSA" << endl << endl;
+cout<< "REPARACION EXITOSA" << endl << endl;
 }
    
 
