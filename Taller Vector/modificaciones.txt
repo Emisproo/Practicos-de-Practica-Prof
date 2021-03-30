@@ -1,5 +1,5 @@
-Modificaciones del tp colaboracion_taller para poder usar la libreria vector 
-sin perder el sentido del programa.
+Modificaciones del tp colaboracion_taller para poder usar la librería vector 
+sin perder el sentido del programa inicial.
 
 Comenzando con los .h:
 Taller.h: se cambio el puntero Vehiculo *lis_de_vehi[2] (array) por la iclusion 
