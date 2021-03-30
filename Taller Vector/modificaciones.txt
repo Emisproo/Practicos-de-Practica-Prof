@@ -1,0 +1,89 @@
+Modificaciones del tp colaboracion_taller para poder usar la libreria vector 
+sin perder el sentido del programa.
+
+Comenzando con los .h:
+Taller.h: se cambio el puntero Vehiculo *lis_de_vehi[2] (array) por la iclusion 
+de la funcion vector, de la libreria <vector>, para crear un vector de tipo Vehiculo.
+Se agrego una funcion cargarCombustible.
+Coche.h: se quitó la función Coche() porque estaba de más, y las funciones get y set.
+Moto.h: se quito la funcion Moto() y las funciones get y set.
+
+Taller.cpp: el destructor se encuentra vacio ya que no tenemos list_de_vehi;
+La funcion Taller::meter(Vehiculo *Pvehiculo) fue modificada: se le cambió todo el preceso
+if (cap_actual_vehiculos == cap_max_vehiculos)
+    {
+        cout<< "Capacidad Maxima Ocupada "<< endl << endl;
+    }
+    else
+    {
+        list_de_vehi[cap_actual_vehiculos] = Pvehiculo;
+        cap_actual_vehiculos++;
+        cout << " Vehiculo ingresado" << endl;
+    }
+por solo la funcion push_back. esta inserta en el vector a través del puntero 
+*Pvehiculo: 
+{
+  Vect.push_back(Pvehiculo);
+}
+(pregunta: ahora no se puede saber cuándo esta lleno en taller. Con esta función,
+el taller tiene capacidad ilimitada o esta limitada a 2?)
+
+La función Taller::arreglarVehiculos() fue modificada y a su vez una de las modificaciones
+más significativas: 
+Antes:
+void Taller::arreglarVehiculos()
+{
+   cout << "Reparando vehiculo.... " << endl;
+   cout<< "REPARACION EXITOSA" << endl << endl;
+}
+
+Después:
+void Taller::arreglarVehiculos()
+{
+    for (int i = 0; i < Vect.size(); i++)
+    {
+        Vect[i] -> arrancar ();
+        Vect[i] -> parar ();
+    }
+
+    cout<< "REPARACION EXITOSA" << endl << endl;
+}
+ 
+Esta modoficación fue necesaria porque cuado yo estaba en el main, en el paso 3
+quise reemplazar 
+ 	   list_de_vehi [0] = new Moto ("BMW ", 750);
+           list_de_vehi [1] = new Coche ("Mercedes Benz ", 9041578);
+
+           for (int i = 0; i < 2; i++)
+           {
+               list_de_vehi[i] -> arrancar();
+               list_de_vehi [i] -> parar();
+               list_de_vehi [i] -> repostar ();
+           }
+por 
+	 Vect [0] = new Moto ("BMW ", 750);
+         Vect [1] = new Coche ("Mercedes Benz ", 9041578);
+
+           for (int i = 0; i < Vect.size(); i++)
+           {
+               vect[i] -> arrancar();
+               vect[i] -> parar();
+               vect [i] -> repostar ();
+           } 
+lo que no me funcionó. Traté tambien con la forma del iterador:
+for(vector<Vehiculo*> :: iterador it = vect.begin(); it vect.end(); ++it)
+pero tampoco me funcionó. De alguna manera no entraba en ningún cado entraba al for.
+Entonces pensé que a lo mejor necesitaba de una funcion la cual tenga los objetos
+así que la clase Taller incluye a Coche y Moto. por tanto utilicé la funcion 
+arreglarVehiculo para poder ejecutar arrancar() y parar() para cada objeto.
+
+La función void Taller :: cargarCombustible() fue necesaria ya que la funcion 
+respostar() de los objetos me quedaba colgada. No me parecía incluirla en 
+arreglarVehiculo() porque no tiene nada que ver. Asi que cree una aparte para 
+repostar.
+
+Tanto en Coche.cpp y Moto.cpp saqué las funciones get y set para ahorra líneas.
+intenté hacerlo anteriormente no me funcionaba si no las agregaba pero esta vez lo solucioné.
+
+Por último el main: se modificó el paso 3 para poder repostar.
+y se agregaror los delete de los punteros PTaller y Pvehiculo que me los había olvidado anteriormente.
