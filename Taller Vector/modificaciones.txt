@@ -28,7 +28,7 @@ por solo la funcion push_back. esta inserta en el vector a través del puntero
 (pregunta: ahora no se puede saber cuándo esta lleno en taller. Con esta función,
 el taller tiene capacidad ilimitada o esta limitada a 2?)
 
-La función Taller::arreglarVehiculos() fue modificada y a su vez una de las modificaciones
+La función Taller::arreglarVehiculos() fue modificada y a su vez, una de las modificaciones
 más significativas: 
 Antes:
 void Taller::arreglarVehiculos()
